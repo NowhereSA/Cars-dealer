@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script>
+    function toggleCheckbox(input) { 
+        input.parentElement.classList.toggle("checked");
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="/static/img/carlos.png" alt="Logo">
+        </div>
+        <nav class="nav">
+            <a href="buying.html">Comprar</a>
+            <a href="#">Vender</a>
+            <a href="#">Ajuda</a>
+        </nav>
+        <div class="login">
+            <a href="#">Login</a>
+            <a href="#">Favoritos</a>
+        </div>
+    </header>
+    <main>
+        <div class="buyMain">
+            <h1 style="font-size: 20px;
+                    font-weight: normal;
+                    margin-left: 15px;
+                    ">
+                    %nome%, caminhão tombou!!</h1>
+            <div class="sidenav">
+                <div class="locDiv">
+                    <h2 style="font-size: 15px;
+                        font-weight: normal;">
+                        Localização
+                    </h2>
+                    <input class="locInput" data-testid="input-field" placeholder="digite sua cidade ou estado">
+                </div>
+                <div class="usedTonew" 
+                    style="font-size: 15px;
+                    font-weight: normal;">
+                    <h3 style="font-size: 15px;
+                        font-weight: normal;"> 
+                        Usado/Novo
+                    </h3>
+                    <div id="checklist">
+                        <label for="new">Novos</label>
+                        <input type="checkbox" id="new" name="new" value="new">
+                        <br>
+                        <label for="used">Usados</label>
+                        <input type="checkbox" id="used" name="used" value="used">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="orderingNew">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui accusamus sint delectus cum! Magni nostrum recusandae laudantium reprehenderit, molestias illo vitae. Exercitationem molestias unde assumenda! Distinctio voluptatum fugiat sint sunt.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam sapiente placeat cumque deserunt dicta officiis explicabo illo unde, minus id quae! Dolore, temporibus. Odio, dolorum assumenda minima impedit corrupti culpa?</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur quod deleniti magni rem harum culpa commodi quaerat distinctio vitae, ipsum reiciendis voluptatum ipsam tempora veniam! Est minus rem a quo.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus repellat in praesentium ad, tenetur amet iusto deleniti nostrum corporis et voluptates officia error dolorum molestias libero asperiores optio iste laudantium?</p>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <p>© 2025 Carlos Automative. Todos os direitos reservado</p>
+            <nav>
+                <a href="#">Sobre</a>
+                <a href="#">Contatos</a>
+                <a href="#">Política de Privacidade</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
