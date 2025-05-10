@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Carros tombados | somente hoje!</title>
+    <link rel="stylesheet" href="/static/css/main.css">
     <script>
-    function toggleCheckbox(input) { 
-        input.parentElement.classList.toggle("checked");
-    }
+        function toggleCheckbox(input) { 
+            input.parentElement.classList.toggle("checked");
+        }
+    //
+    //    window.onload = function(){
+    //        var canvas = document.getElementById("myCanvas");
+            // Corrigindo o método para obter o contexto
+    //        var ctx = canvas.getContext("2d");  
+
+            // Carrega imagem
+    //       var img = new Image();
+    //        img.src = "/home/nowhere/Documentos/Cars-dealer/static/img/teste.png"; // Corrigindo 'scr' para 'src'
+            
+    //        img.onload = function() {
+    //            ctx.drawImage(img, 50, 50, 200, 150);
+
+                // Descrição
+    //            ctx.font = "20px Arial";
+    //            ctx.fillStyle = "black";
+    //            ctx.fillText("Lord é gay", 50, 220);
+    //        }
+    //    };
     </script>
 </head>
 <body>
@@ -27,16 +46,13 @@
         </div>
     </header>
     <main>
+        <h1>
+            %nome%, caminhão tombou!!
+        </h1>
         <div class="buyMain">
-            <h1 style="font-size: 20px;
-                    font-weight: normal;
-                    margin-left: 15px;
-                    ">
-                    %nome%, caminhão tombou!!</h1>
             <div class="sidenav">
                 <div class="locDiv">
-                    <h2 style="font-size: 15px;
-                        font-weight: normal;">
+                    <h2>
                         Localização
                     </h2>
                     <input class="locInput" data-testid="input-field" placeholder="digite sua cidade ou estado">
@@ -44,30 +60,38 @@
                 <div class="usedTonew" 
                     style="font-size: 15px;
                     font-weight: normal;">
-                    <h3 style="font-size: 15px;
-                        font-weight: normal;"> 
+                    <h3> 
                         Usado/Novo
                     </h3>
                     <div id="checklist">
-                        <label for="new">Novos</label>
-                        <input type="checkbox" id="new" name="new" value="new">
-                        <br>
-                        <label for="used">Usados</label>
-                        <input type="checkbox" id="used" name="used" value="used">
+                        <label class="checkbox-container">
+                            <input type="checkbox" onclick="toggleCheckbox(this)"> Novo
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" onclick="toggleCheckbox(this)"> Usado
+                        </label>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="orderingNew">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui accusamus sint delectus cum! Magni nostrum recusandae laudantium reprehenderit, molestias illo vitae. Exercitationem molestias unde assumenda! Distinctio voluptatum fugiat sint sunt.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam sapiente placeat cumque deserunt dicta officiis explicabo illo unde, minus id quae! Dolore, temporibus. Odio, dolorum assumenda minima impedit corrupti culpa?</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur quod deleniti magni rem harum culpa commodi quaerat distinctio vitae, ipsum reiciendis voluptatum ipsam tempora veniam! Est minus rem a quo.</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus repellat in praesentium ad, tenetur amet iusto deleniti nostrum corporis et voluptates officia error dolorum molestias libero asperiores optio iste laudantium?</p>
+            <div class="mainContent">
+                <ul id="cars">
+                    {% for car in cars %}
+                    <li>
+                        <p><img src="http://127.0.0.1:5000/image/1" alt="Imagem do Banco"></p>
+                        <p>{{car.descricao}}</p>
+                    </li>
+                    {% endfor %} 
+                </ul>
+            <!--<canvas 
+                    id="myCanvas" width="300" height="300" style="border:1px solid #000000;">
+                </canvas>
+            -->
+            </div>
         </div>
     </main>
     <footer>
         <div>
-            <p>© 2025 Carlos Automative. Todos os direitos reservado</p>
+            <p>© 2025 Carlos Automotive. Todos os direitos reservado</p>
             <nav>
                 <a href="#">Sobre</a>
                 <a href="#">Contatos</a>

@@ -1,6 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 from jinja2 import Environment, PackageLoader, select_autoescape
 
 app = FastAPI()
@@ -9,11 +10,15 @@ env = Environment(
     loader=PackageLoader("main"),
     autoescape=select_autoescape()
 )
-template = env.get_template("main.html")
+#template = env.get_template("main.html")
+templates = Jinja2Templates(directory="templates")
+
+# teste
+carro = {"desc": "oi"}
 
 @app.get("/", response_class=HTMLResponse)
-def teste():
-    return template.render()
+def teste(request: Request):
+    return templates.TemplateResponse("buying.html", {"request": request, "cars": carro})
 
 if __name__ == "__main__":
     import uvicorn
